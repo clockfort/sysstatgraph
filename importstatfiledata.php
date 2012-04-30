@@ -248,9 +248,9 @@ class importstatfiledata {
 			$this->recordstat($inputtimestamp,'pcktsrecvpersecond-' . $adaptername,floatval($inputlinepartlist[2]));
 			$this->recordstat($inputtimestamp,'pcktstrnspersecond-' . $adaptername,floatval($inputlinepartlist[3]));
 
-			// KB's sent/received
-			$this->recordstat($inputtimestamp,'kbrecvpersecond-' . $adaptername,floor($inputlinepartlist[4]));
-			$this->recordstat($inputtimestamp,'kbtrnspersecond-' . $adaptername,floor($inputlinepartlist[5]));
+			// KB's sent/received - now MB (~clockfort)
+			$this->recordstat($inputtimestamp,'kbrecvpersecond-' . $adaptername,(floatval($inputlinepartlist[4] / 1024)));
+			$this->recordstat($inputtimestamp,'kbtrnspersecond-' . $adaptername,(floatval($inputlinepartlist[5] / 1024)));
 
 			return;
 		}

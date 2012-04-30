@@ -169,12 +169,12 @@ var sysstatgraph = function() {
 				// - total number of kilobytes received per second
 				// - total number of kilobytes transmitted per second
 				var networkdatagraph = new rendergraph.instance(
-					'Network kilobytes (per second) - [' + networkinterfacename + ']',graphwidth,graphheight,
+					'Network megabytes (per second) - [' + networkinterfacename + ']',graphwidth,graphheight,
 					starttimestamp,timepointlist
 				);
 
-				networkdatagraph.addgraphline('Kilobytes received',getvaluelist('kbrecvpersecond-' + networkinterfacename));
-				networkdatagraph.addgraphline('Kilobytes transmitted',getvaluelist('kbtrnspersecond-' + networkinterfacename));
+				networkdatagraph.addgraphline('Megabytes received',getvaluelist('kbrecvpersecond-' + networkinterfacename));
+				networkdatagraph.addgraphline('Megabytes transmitted',getvaluelist('kbtrnspersecond-' + networkinterfacename));
 				networkdatagraph.render();
 			}
 
